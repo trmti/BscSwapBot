@@ -1,7 +1,7 @@
 const ethers = require('ethers');
 const abi = require('./bot.json');
 const { swapAllToken } = require('./swap.js');
-const { addresses, secretKey } = require('./config.my.js');
+const { addresses, secretKey } = require('./config.js');
 bsc_rpc = 'https://bsc-dataseed.binance.org/';
 const provider = new ethers.providers.JsonRpcProvider(bsc_rpc, {
   name: 'binance',
