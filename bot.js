@@ -14,7 +14,7 @@ const account = wallet.connect(provider);
 const contract = new ethers.Contract(addresses.tokenA, abi, provider);
 const filter = contract.filters.Transfer(null, addresses.myWallet);
 
-contract.on(filter, (args) => {
+contract.on(filter, () => {
   console.log('You got New asset!');
   swapAllToken(account, addresses.tokenA, addresses.tokenB);
 });

@@ -1,3 +1,4 @@
+const ethers = require('ethers');
 /*
   myWallet: 自分のウォレットアドレス
   tokenA: スワップ元のトークン
@@ -10,3 +11,5 @@ module.exports.addresses = {
 };
 
 module.exports.secretKey = '12345....'; // 秘密鍵
+
+module.exports.gasPrice = ethers.utils.parseUnits('5', 'gwei').toString();
