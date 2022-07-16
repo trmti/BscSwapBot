@@ -8,7 +8,7 @@ IDO などで新しいトークンを受け取ったときになど、他の人�
 
 スワップ元のトークンを「 TokenA 」、スワップ先のトークンを「 TokenB 」とします。
 
-まずは、Token1 の ABI を BscScan などから拾ってきて bot.json に入れてください。
+まずは、TokenA の ABI を BscScan などから拾ってきて bot.json に入れてください。
 
 次に、config.js を開いてアドレスや秘密鍵などを設定して下さい。
 
