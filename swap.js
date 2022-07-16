@@ -1,7 +1,8 @@
 const ethers = require('ethers');
 const router_address = '0x10ED43C718714eb63d5aA57B78B54704E256024E';
-const { gasLimit, gasPrice } = require('./config.js');
+const { gasPrice, minTokenPrice } = require('./config.js');
 
+const busdAddress = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 var failureCount = 0;
 
 async function swapAllToken(account, tokenA, tokenB) {
@@ -23,6 +24,18 @@ async function swapAllToken(account, tokenA, tokenB) {
       ],
       account
     );
+
+    const tokenA_balance = await router.getAmountsOut((10 ** 18).toString(), [
+      tokenA,
+      busdAddress,
+    ]);
+    const tokenA_USD = Number(tokenA_balance[1]) / 10 ** 18;
+    console.log('1 tokenA =', tokenA_USD.toString(), 'USD');
+
+    if (tokenA_USD < minTokenPrice) {
+      console.log('トークン価格がminTokenPriceを下回ったので処理を中止します');
+      return;
+    }
 
     let tx = await tokenA_contract.functions.approve(
       router.address,

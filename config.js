@@ -13,3 +13,4 @@ module.exports.addresses = {
 module.exports.secretKey = '12345....'; // 秘密鍵
 
 module.exports.gasPrice = ethers.utils.parseUnits('5', 'gwei').toString();
+module.exports.minTokenPrice = 0; // token価格(USD)がこの値を下回ったとき、実行中止(設定しない場合は「0」を入力)
