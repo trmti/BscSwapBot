@@ -1,6 +1,6 @@
 const ethers = require('ethers');
 const router_address = '0x10ED43C718714eb63d5aA57B78B54704E256024E';
-const { gasPrice, minTokenPrice } = require('./config.js');
+const { gasPrice, minTokenPrice } = require('./config.my.js');
 
 const busdAddress = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 var failureCount = 0;
@@ -46,7 +46,7 @@ async function swapAllToken(account, tokenA, tokenB) {
     console.log(receipt);
 
     tx = await tokenA_contract.functions.balanceOf(account.address);
-    const amountIn = tx[0].sub(tx[0].div(10));
+    const amountIn = tx[0].sub(tx[0].div(1000));
     const amounts = await router.getAmountsOut(amountIn, [tokenA, tokenB]);
     const amountOutMin = amounts[1].sub(amounts[1].div(10));
     console.log(`
