@@ -18,4 +18,3 @@ contract.on(filter, () => {
   console.log('You got New asset!');
   swapAllToken(account, addresses.tokenA, addresses.tokenB);
 });
-//
