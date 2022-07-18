@@ -1,6 +1,6 @@
 const ethers = require('ethers');
 const router_address = '0x10ED43C718714eb63d5aA57B78B54704E256024E';
-const { gasPrice, minTokenPrice } = require('./config.my.js');
+const { gasPrice, minTokenPrice } = require('./config.js');
 
 const busdAddress = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 var failureCount = 0;
