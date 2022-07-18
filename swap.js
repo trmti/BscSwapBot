@@ -70,6 +70,7 @@ async function swapAllToken(account, tokenA, tokenB) {
 
     console.log('Transaction receipt');
     console.log(receipt);
+    console.log('Your swap succeed!');
   } catch (err) {
     console.error(err);
     failureCount++;
